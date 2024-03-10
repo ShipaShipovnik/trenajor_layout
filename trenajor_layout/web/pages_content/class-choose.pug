@@ -1,0 +1,20 @@
+extends ../asidebase.pug
+
+block title 
+    | Выбор предмета
+
+block header-content
+    h1 ВЫберите прдмет
+block content
+    .class-choose-window
+        .class__block#class_math
+            img(src, alt='math')
+            p Математика
+        .class__block#class_geometry
+            img(src, alt='geometry')
+            p Геометрия
+        .class__block#class_algebra
+            img(src, alt='algebra')
+            p Алгебра
+        .class_button
+            button(type='submit') Выбрать

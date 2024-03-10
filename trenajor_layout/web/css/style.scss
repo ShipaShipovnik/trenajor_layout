@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+* {
+    font-family: "Balsamiq Sans", sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+button {
+    cursor: pointer;
+}
+
+// основной грид
+.wrapper {
+    width: 100%;
+    height: 100vh;
+    background-image: url('../img/background-main.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    grid-template-rows: 120px 1fr;
+    gap: 30px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "aside header"
+        "aside content";
+}
+
+.aside {
+    grid-area: aside;
+    background-image: url('../img/Background.png');
+    background-position: top -20px left -20px;
+    background-repeat: no-repeat;
+    width: 100%;
+    display: flex;
+
+    .aside__wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        width: 235px;
+        margin: 0 auto;
+        justify-items: center;
+        color: green;
+        position: relative;
+        padding-top: 40px;
+
+        button {
+            font-size: 24px;
+            width: 100%;
+            height: 70px;
+            background-color: white;
+            margin: 20px 0;
+            color: green;
+            border: 3px solid rgb(143, 143, 143);
+            border-radius: 10px;
+        }
+
+        .aside__top {
+            width: 100%;
+            text-align: center;
+            font-size: 24px;
+
+            .aside__avatar {
+                margin: 20px auto;
+                background-position: center;
+                background-size: contain;
+                width: 100px;
+                height: 100px;
+                border: green 4px solid;
+                border-radius: 5px;
+            }
+        }
+
+        .aside__middle {
+            width: 100%;
+            text-align: center;
+        }
+
+        .aside__bottom {
+            width: 100%;
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+
+            .aside__exit {
+                color: red;
+                border: 1px solid red;
+
+            }
+        }
+    }
+}
+
+.header {
+    grid-area: header;
+    .header-block{
+        height: 100%;
+        width: 80%;
+        margin: 0 auto;
+        border-radius: 0 0 20px 20px;
+        background-color: #F0F0F0;
+        border: green 4px solid;
+    }
+}
+
+.content {
+    grid-area: content;
+}
+
+
+
+
+
+// КОНТЕНТ
+
+// Выбор предмета
+.class-choose-window {
+    position: absolute;
+    right: 200px;
+    padding: 20px;
+    background-color: rgb(218, 218, 218);
+    border: solid 3px green;
+    border-radius: 20px;
+    width: 900px;
+    height: 300px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 70% 30%;
+    gap: 20px 20px;
+    grid-template-areas:
+        "obj1 obj2 obj3"
+        "button button button";
+
+    #class_math {
+        grid-area: obj1;
+    }
+
+    #class_geometry {
+        grid-area: obj2;
+    }
+
+    #class_algebra {
+        grid-area: obj3;
+    }
+
+    #class_button {
+        grid-area: button;
+    }
+
+    .class__block {
+        border: 2px solid red;
+    }
+}

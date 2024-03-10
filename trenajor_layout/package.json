@@ -1,0 +1,19 @@
+{
+  "name": "trenajor_layout",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShipaShipovnik/trenajor_layout.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShipaShipovnik/trenajor_layout/issues"
+  },
+  "homepage": "https://github.com/ShipaShipovnik/trenajor_layout#readme"
+}
