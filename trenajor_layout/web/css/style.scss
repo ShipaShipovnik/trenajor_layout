@@ -13,6 +13,7 @@ button {
     cursor: pointer;
 }
 
+
 // основной грид
 .wrapper {
     width: 100%;
@@ -29,6 +30,78 @@ button {
     grid-template-areas:
         "aside header"
         "aside content";
+
+    .form-window{
+        position: absolute;
+        width: 1220px;
+        height: 800px;
+        background-image: url('../img/form_background.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        left: calc((100% - 1220px)/2);
+        top: calc((100% - 800px)/2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .form-window__wrapper{
+            width: 625px;
+            height: 605px;
+            // border: 2px solid red;
+        
+            .form-window__content{
+                // display: flex;
+                
+                .content__icon{
+                    margin: 0 auto;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: cover;
+                    width: 175px;
+                    height: 175px;
+                    border: green 3px solid;
+                    border-radius: 20px;
+                    background-image: url(../img/placeholder.jpg);
+                }
+
+                .content__login {
+                    display: flex;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                    padding-top: 60px;
+                    
+                    input {
+                        width: 100%;
+                        height: 65px;
+                        border-radius: 20px;
+                        border: solid 3px #979797;
+                        font-size: 36px;
+                        text-align: center;
+                        margin-bottom: 53px;
+                    }
+
+                    button {
+                        width: 100%;
+                        height: 120px;
+                        background-color: #378E5F;
+                        color: #FFFFFF;
+                        border: solid 3px #00E56A;
+                        border-radius: 20px;
+                        font-size: 36px;
+                        transition: all 0.05s ease-in-out;
+                    }
+
+                    button:active {
+                        transform: scale(0.9);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.wrapper_auth{
+    background-image: url('../img/auth_background.png');
 }
 
 .aside {
