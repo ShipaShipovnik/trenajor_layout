@@ -1,0 +1,16 @@
+extends ../asidebase.pug
+
+block title 
+    | Выбор предмета
+
+block header-content
+    h1 Сюда кароче вот эти уровни кругленькие
+
+block content 
+    .task-window.task-ask
+        .question_block
+            p Для приготовления обеда повару понадобилось 24 кг картошки, свеклы в 3 раза меньше, а лука в 2 раза меньше чем свеклы. Сколько килограмм лука потратил повар?. Выберите правильный ответ.
+        form(action="")
+            input(type="text" name="answer" placeholder="Впиши ответ")
+            input(type="submit" value="Ответить")
+

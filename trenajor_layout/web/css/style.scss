@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
+$TextGreen: #378E5F;
+
 * {
     font-family: "Balsamiq Sans", sans-serif;
     box-sizing: border-box;
@@ -21,7 +23,7 @@ button {
     background-image: url('../img/background-main.png');
     background-position: center;
     background-repeat: no-repeat;
-    
+
     display: grid;
     grid-template-columns: 400px 1fr;
     grid-template-rows: 120px 1fr;
@@ -31,7 +33,7 @@ button {
         "aside header"
         "aside content";
 
-    .form-window{
+    .form-window {
         position: absolute;
         width: 1220px;
         height: 800px;
@@ -44,15 +46,15 @@ button {
         justify-content: center;
         align-items: center;
 
-        .form-window__wrapper{
+        .form-window__wrapper {
             width: 625px;
             height: 605px;
             // border: 2px solid red;
-        
-            .form-window__content{
+
+            .form-window__content {
                 // display: flex;
-                
-                .content__icon{
+
+                .content__icon {
                     margin: 0 auto;
                     background-repeat: no-repeat;
                     background-position: center;
@@ -69,7 +71,7 @@ button {
                     justify-content: center;
                     flex-wrap: wrap;
                     padding-top: 60px;
-                    
+
                     input {
                         width: 100%;
                         height: 65px;
@@ -100,7 +102,7 @@ button {
     }
 }
 
-.wrapper_auth{
+.wrapper_auth {
     background-image: url('../img/auth_background.png');
 }
 
@@ -119,7 +121,7 @@ button {
         width: 235px;
         margin: 0 auto;
         justify-items: center;
-        color: green;
+        color: $TextGreen;
         position: relative;
         padding-top: 40px;
 
@@ -129,7 +131,7 @@ button {
             height: 70px;
             background-color: white;
             margin: 20px 0;
-            color: green;
+            color: $TextGreen;
             border: 3px solid rgb(143, 143, 143);
             border-radius: 10px;
         }
@@ -172,13 +174,15 @@ button {
 
 .header {
     grid-area: header;
-    .header-block{
+
+    .header-block {
         height: 100%;
         width: 80%;
         margin: 0 auto;
         border-radius: 0 0 20px 20px;
         background-color: #F0F0F0;
         border: green 4px solid;
+
     }
 }
 
@@ -194,21 +198,31 @@ button {
 
 // Выбор предмета
 .class-choose-window {
-    position: absolute;
-    right: 200px;
-    padding: 20px;
-    background-color: rgb(218, 218, 218);
+    // position: absolute;
+    // right: 200px;
+    margin: 50px auto;
+    padding: 70px 47px 47px 20px;
+    background-color: #F0F0F0;
     border: solid 3px green;
     border-radius: 20px;
-    width: 900px;
-    height: 300px;
+    width: 1300px;
+    height: 630px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 70% 30%;
-    gap: 20px 20px;
+    gap: 30px 20px;
     grid-template-areas:
         "obj1 obj2 obj3"
         "button button button";
+
+    img {
+        width: 275px;
+    }
+
+    p {
+        font-size: 30px;
+        color: $TextGreen;
+    }
 
     #class_math {
         grid-area: obj1;
@@ -222,11 +236,93 @@ button {
         grid-area: obj3;
     }
 
-    #class_button {
+    .class_button {
         grid-area: button;
+        text-align: center;
+
+        button {
+            font-size: 30px;
+            width: 235px;
+            height: 70px;
+            background-color: white;
+            margin: 20px 0;
+            color: $TextGreen;
+            border: 3px solid rgb(143, 143, 143);
+            border-radius: 10px;
+
+        }
     }
 
     .class__block {
-        border: 2px solid red;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .class__block_chosen {
+        outline: 4px solid green;
+        border-radius: 20px;
+    }
+
+}
+
+.header-block {
+    text-align: center;
+
+    h1 {
+        color: $TextGreen;
+        font-size: 45px;
+        margin-top: 25px;
     }
 }
+
+// ЗАДАЧКИ: Текстовый вопрос
+
+.task-window {
+    margin: 150px auto;
+    padding: 40px 127px;
+    background-color: #F0F0F0;
+    border: solid 3px green;
+    border-radius: 20px;
+    width: 1300px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 1fr;
+    gap: 30px 20px;
+
+    .question_block {
+        width: 100%;
+        background-color: #31EA86;
+        border-radius: 20px;
+        color: $TextGreen;
+        padding: 20px 30px;
+        font-size: 30px;
+    }
+
+    form {
+        display: flex;
+        justify-content: space-between;
+
+        input[type="submit"] {
+            font-size: 30px;
+            width: 30%;
+            height: 65px;
+            background-color: white;
+            color: $TextGreen;
+            border: 3px solid rgb(143, 143, 143);
+            border-radius: 10px;
+            }
+        }
+
+        input[type="text"] {
+            width: 60%;
+            height: 65px;
+            background-color: white;
+            color: $TextGreen;
+            border: 3px solid rgb(143, 143, 143);
+            border-radius: 10px;
+            font-size: 30px;
+            text-align: center;
+
+        }
+
+    }

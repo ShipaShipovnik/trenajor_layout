@@ -101,7 +101,7 @@ button {
   width: 235px;
   margin: 0 auto;
   justify-items: center;
-  color: green;
+  color: #378E5F;
   position: relative;
   padding-top: 40px;
 }
@@ -111,7 +111,7 @@ button {
   height: 70px;
   background-color: white;
   margin: 20px 0;
-  color: green;
+  color: #378E5F;
   border: 3px solid rgb(143, 143, 143);
   border-radius: 10px;
 }
@@ -161,19 +161,25 @@ button {
 }
 
 .class-choose-window {
-  position: absolute;
-  right: 200px;
-  padding: 20px;
-  background-color: rgb(218, 218, 218);
+  margin: 50px auto;
+  padding: 70px 47px 47px 20px;
+  background-color: #F0F0F0;
   border: solid 3px green;
   border-radius: 20px;
-  width: 900px;
-  height: 300px;
+  width: 1300px;
+  height: 630px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 70% 30%;
-  gap: 20px 20px;
+  gap: 30px 20px;
   grid-template-areas: "obj1 obj2 obj3" "button button button";
+}
+.class-choose-window img {
+  width: 275px;
+}
+.class-choose-window p {
+  font-size: 30px;
+  color: #378E5F;
 }
 .class-choose-window #class_math {
   grid-area: obj1;
@@ -184,9 +190,78 @@ button {
 .class-choose-window #class_algebra {
   grid-area: obj3;
 }
-.class-choose-window #class_button {
+.class-choose-window .class_button {
   grid-area: button;
+  text-align: center;
+}
+.class-choose-window .class_button button {
+  font-size: 30px;
+  width: 235px;
+  height: 70px;
+  background-color: white;
+  margin: 20px 0;
+  color: #378E5F;
+  border: 3px solid rgb(143, 143, 143);
+  border-radius: 10px;
 }
 .class-choose-window .class__block {
-  border: 2px solid red;
+  text-align: center;
+  padding: 20px;
+}
+.class-choose-window .class__block_chosen {
+  outline: 4px solid green;
+  border-radius: 20px;
+}
+
+.header-block {
+  text-align: center;
+}
+.header-block h1 {
+  color: #378E5F;
+  font-size: 45px;
+  margin-top: 25px;
+}
+
+.task-window {
+  margin: 150px auto;
+  padding: 40px 127px;
+  background-color: #F0F0F0;
+  border: solid 3px green;
+  border-radius: 20px;
+  width: 1300px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 3fr 1fr;
+  gap: 30px 20px;
+}
+.task-window .question_block {
+  width: 100%;
+  background-color: #31EA86;
+  border-radius: 20px;
+  color: #378E5F;
+  padding: 20px 30px;
+  font-size: 30px;
+}
+.task-window form {
+  display: flex;
+  justify-content: space-between;
+}
+.task-window form input[type=submit] {
+  font-size: 30px;
+  width: 30%;
+  height: 65px;
+  background-color: white;
+  color: #378E5F;
+  border: 3px solid rgb(143, 143, 143);
+  border-radius: 10px;
+}
+.task-window input[type=text] {
+  width: 60%;
+  height: 65px;
+  background-color: white;
+  color: #378E5F;
+  border: 3px solid rgb(143, 143, 143);
+  border-radius: 10px;
+  font-size: 30px;
+  text-align: center;
 }/*# sourceMappingURL=style.css.map */
