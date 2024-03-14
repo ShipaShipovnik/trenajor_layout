@@ -148,12 +148,14 @@ button {
   grid-area: header;
 }
 .header .header-block {
+  padding-top: 30px;
   height: 100%;
   width: 80%;
   margin: 0 auto;
   border-radius: 0 0 20px 20px;
   background-color: #F0F0F0;
   border: green 4px solid;
+  border-top-style: none;
 }
 
 .content {
@@ -219,7 +221,38 @@ button {
 .header-block h1 {
   color: #378E5F;
   font-size: 45px;
-  margin-top: 25px;
+}
+
+.header__level-balls-line {
+  margin-left: 28%;
+  display: flex;
+  gap: 15px;
+}
+.header__level-balls-line .level-ball {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border: grey 2px solid;
+}
+.header__level-balls-line .ball-done {
+  background-color: #31EA86;
+}
+.header__level-balls-line .ball-skip {
+  background-color: grey;
+}
+.header__level-balls-line .ball-current {
+  outline: #31EA86 3px solid;
+  border: white;
+  outline-offset: 3px;
+  background-color: #31EA86;
+}
+.header__level-balls-line .final-ball {
+  background-color: gold;
+  border: 2px solid orange;
+}
+.header__level-balls-line img {
+  width: 40px;
 }
 
 .task-window {
@@ -236,7 +269,7 @@ button {
 }
 .task-window .question_block {
   width: 100%;
-  background-color: #31EA86;
+  background-color: rgba(49, 234, 134, 0.5);
   border-radius: 20px;
   color: #378E5F;
   padding: 20px 30px;

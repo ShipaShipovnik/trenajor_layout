@@ -176,12 +176,14 @@ button {
     grid-area: header;
 
     .header-block {
+        padding-top: 30px;
         height: 100%;
         width: 80%;
         margin: 0 auto;
         border-radius: 0 0 20px 20px;
         background-color: #F0F0F0;
         border: green 4px solid;
+        border-top-style: none;
 
     }
 }
@@ -271,11 +273,43 @@ button {
     h1 {
         color: $TextGreen;
         font-size: 45px;
-        margin-top: 25px;
     }
 }
 
 // ЗАДАЧКИ: Текстовый вопрос
+
+.header__level-balls-line {
+    margin-left: 28%;
+    display: flex;
+    gap: 15px;
+    .level-ball {
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        background-color: white;
+        border: grey 2px solid;
+    }
+    .ball-done{
+        background-color: #31EA86;
+    }
+    .ball-skip{
+        background-color: grey;
+    }
+    .ball-current{
+        outline:#31EA86 3px solid;
+        border: white ;
+        outline-offset: 3px;
+        background-color: #31EA86;
+    }
+    .final-ball{
+        background-color: gold;
+        border: 2px solid orange;
+    }
+    img{
+        width: 40px;
+    }
+
+}
 
 .task-window {
     margin: 150px auto;
@@ -291,7 +325,7 @@ button {
 
     .question_block {
         width: 100%;
-        background-color: #31EA86;
+        background-color: rgb(49, 234, 134, 0.5);
         border-radius: 20px;
         color: $TextGreen;
         padding: 20px 30px;
@@ -310,19 +344,19 @@ button {
             color: $TextGreen;
             border: 3px solid rgb(143, 143, 143);
             border-radius: 10px;
-            }
         }
+    }
 
-        input[type="text"] {
-            width: 60%;
-            height: 65px;
-            background-color: white;
-            color: $TextGreen;
-            border: 3px solid rgb(143, 143, 143);
-            border-radius: 10px;
-            font-size: 30px;
-            text-align: center;
-
-        }
+    input[type="text"] {
+        width: 60%;
+        height: 65px;
+        background-color: white;
+        color: $TextGreen;
+        border: 3px solid rgb(143, 143, 143);
+        border-radius: 10px;
+        font-size: 30px;
+        text-align: center;
 
     }
+
+}
