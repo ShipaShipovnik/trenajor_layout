@@ -2,6 +2,17 @@
 * {
   font-family: "Balsamiq Sans", sans-serif;
   box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.no-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 }
 
 body {
@@ -39,47 +50,8 @@ button {
   align-items: center;
 }
 .wrapper .form-window .form-window__wrapper {
-  width: 625px;
-  height: 605px;
-}
-.wrapper .form-window .form-window__wrapper .form-window__content .content__icon {
-  margin: 0 auto;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  width: 175px;
-  height: 175px;
-  border: green 3px solid;
-  border-radius: 20px;
-  background-image: url(../img/placeholder.jpg);
-}
-.wrapper .form-window .form-window__wrapper .form-window__content .content__login {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding-top: 60px;
-}
-.wrapper .form-window .form-window__wrapper .form-window__content .content__login input {
-  width: 100%;
-  height: 65px;
-  border-radius: 20px;
-  border: solid 3px #979797;
-  font-size: 36px;
-  text-align: center;
-  margin-bottom: 53px;
-}
-.wrapper .form-window .form-window__wrapper .form-window__content .content__login button {
-  width: 100%;
-  height: 120px;
-  background-color: #378E5F;
-  color: #FFFFFF;
-  border: solid 3px #00E56A;
-  border-radius: 20px;
-  font-size: 36px;
-  transition: all 0.05s ease-in-out;
-}
-.wrapper .form-window .form-window__wrapper .form-window__content .content__login button:active {
-  transform: scale(0.9);
+  height: 100%;
+  width: 1048px;
 }
 
 .wrapper_auth {
@@ -156,10 +128,58 @@ button {
   background-color: #F0F0F0;
   border: green 4px solid;
   border-top-style: none;
+  text-align: center;
+}
+.header .header-block h1 {
+  color: #378E5F;
+  font-size: 45px;
 }
 
 .content {
   grid-area: content;
+}
+
+.content__auth-window {
+  width: 625px;
+}
+.content__auth-window .auth-window__user-icon {
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 175px;
+  height: 175px;
+  border: green 3px solid;
+  border-radius: 20px;
+  background-image: url(../img/placeholder.jpg);
+}
+.content__auth-window .auth-form {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-top: 60px;
+}
+.content__auth-window .auth-form input {
+  width: 100%;
+  height: 65px;
+  border-radius: 20px;
+  border: solid 3px #979797;
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 53px;
+}
+.content__auth-window .auth-form button {
+  width: 100%;
+  height: 120px;
+  background-color: #378E5F;
+  color: #FFFFFF;
+  border: solid 3px #00E56A;
+  border-radius: 20px;
+  font-size: 36px;
+  transition: all 0.05s ease-in-out;
+}
+.content__auth-window .auth-form button:active {
+  transform: scale(0.9);
 }
 
 .class-choose-window {
@@ -213,14 +233,6 @@ button {
 .class-choose-window .class__block_chosen {
   outline: 4px solid green;
   border-radius: 20px;
-}
-
-.header-block {
-  text-align: center;
-}
-.header-block h1 {
-  color: #378E5F;
-  font-size: 45px;
 }
 
 .header__level-balls-line {
@@ -297,4 +309,116 @@ button {
   border-radius: 10px;
   font-size: 30px;
   text-align: center;
+}
+
+.profile-window {
+  margin: 70px 0 50px 0;
+  display: grid;
+  height: 100%;
+  row-gap: 100px;
+}
+.profile-window .profile-window__top {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+.profile-window .profile-window__top p {
+  font-size: 30px;
+  color: #378E5F;
+  margin-left: 36px;
+}
+.profile-window .profile-window__top .profile-window__user-icon {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 175px;
+  height: 175px;
+  border: green 3px solid;
+  border-radius: 20px;
+  background-image: url(../img/placeholder.jpg);
+}
+.profile-window .profile-window__top .profile-window__back {
+  background-color: #E45454;
+  border: none;
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  position: absolute;
+  top: 54px;
+  right: 54px;
+}
+.profile-window .profile__stats .tab {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background-color: white;
+  padding: 20px;
+  outline: #979797 3px solid;
+  border-radius: 20px;
+}
+.profile-window .profile__stats .tab > input[type=radio] {
+  display: none;
+}
+.profile-window .profile__stats .tab-content {
+  display: none;
+  width: 100%;
+  margin-top: 60px;
+}
+.profile-window .profile__stats .tab-content .tab__stat-block {
+  text-align: center;
+}
+.profile-window .profile__stats .tab-content .tab__stat-block h3 {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+.profile-window .profile__stats .tab-content .tab__stat-block .stat_block__cirlce {
+  margin: 0 auto;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+}
+.profile-window .profile__stats .tab-content .tab__stat-block .stat_block__cirlce p {
+  margin-top: 40%;
+  font-size: 30px;
+}
+.profile-window .profile__stats .tab-content .stat-good {
+  color: rgb(69, 216, 55);
+}
+.profile-window .profile__stats .tab-content .stat-good .stat_block__cirlce {
+  border: 5px solid rgb(69, 216, 55);
+}
+.profile-window .profile__stats .tab-content .stat-mid {
+  color: #F08200;
+}
+.profile-window .profile__stats .tab-content .stat-mid .stat_block__cirlce {
+  border: 5px solid #F08200;
+}
+.profile-window .profile__stats .tab-content .stat-bad {
+  color: #E45454;
+}
+.profile-window .profile__stats .tab-content .stat-bad .stat_block__cirlce {
+  border: 5px solid #E45454;
+}
+.profile-window .profile__stats #tab-btn-1:checked ~ #content-1,
+.profile-window .profile__stats #tab-btn-2:checked ~ #content-2,
+.profile-window .profile__stats #tab-btn-3:checked ~ #content-3 {
+  display: flex;
+  justify-content: space-around;
+}
+.profile-window .profile__stats label {
+  display: block;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  text-decoration: none;
+  color: #378E5F;
+  border: 0;
+  background: 0 0;
+  height: 30px;
+  font-size: 20px;
+}
+.profile-window .profile__stats input[type=radio]:checked + label {
+  cursor: default;
+  outline: 3px solid #378E5F;
+  border-radius: 5px;
 }/*# sourceMappingURL=style.css.map */

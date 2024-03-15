@@ -2,9 +2,26 @@
 
 $TextGreen: #378E5F;
 
+$LiglyRed:#E45454;
+
 * {
     font-family: "Balsamiq Sans", sans-serif;
     box-sizing: border-box;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.no-select {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 body {
@@ -45,60 +62,11 @@ button {
         display: flex;
         justify-content: center;
         align-items: center;
-
-        .form-window__wrapper {
-            width: 625px;
-            height: 605px;
-            // border: 2px solid red;
-
-            .form-window__content {
-                // display: flex;
-
-                .content__icon {
-                    margin: 0 auto;
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    background-size: cover;
-                    width: 175px;
-                    height: 175px;
-                    border: green 3px solid;
-                    border-radius: 20px;
-                    background-image: url(../img/placeholder.jpg);
-                }
-
-                .content__login {
-                    display: flex;
-                    justify-content: center;
-                    flex-wrap: wrap;
-                    padding-top: 60px;
-
-                    input {
-                        width: 100%;
-                        height: 65px;
-                        border-radius: 20px;
-                        border: solid 3px #979797;
-                        font-size: 36px;
-                        text-align: center;
-                        margin-bottom: 53px;
-                    }
-
-                    button {
-                        width: 100%;
-                        height: 120px;
-                        background-color: #378E5F;
-                        color: #FFFFFF;
-                        border: solid 3px #00E56A;
-                        border-radius: 20px;
-                        font-size: 36px;
-                        transition: all 0.05s ease-in-out;
-                    }
-
-                    button:active {
-                        transform: scale(0.9);
-                    }
-                }
-            }
+        .form-window__wrapper{
+            height: 100%;
+            width: 1048px;
         }
+
     }
 }
 
@@ -184,6 +152,12 @@ button {
         background-color: #F0F0F0;
         border: green 4px solid;
         border-top-style: none;
+        text-align: center;
+
+        h1 {
+            color: $TextGreen;
+            font-size: 45px;
+        }
 
     }
 }
@@ -192,13 +166,63 @@ button {
     grid-area: content;
 }
 
+// 
+// КОНТЕНТ СТРАНИЦ
+// 
 
+//login
 
+.content__auth-window {
+    width: 625px;
 
+    .auth-window__user-icon {
+        margin: 0 auto;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        width: 175px;
+        height: 175px;
+        border: green 3px solid;
+        border-radius: 20px;
+        background-image: url(../img/placeholder.jpg);
+    }
 
-// КОНТЕНТ
+    .auth-form {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding-top: 60px;
 
-// Выбор предмета
+        input {
+            width: 100%;
+            height: 65px;
+            border-radius: 20px;
+            border: solid 3px #979797;
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 53px;
+        }
+
+        button {
+            width: 100%;
+            height: 120px;
+            background-color: #378E5F;
+            color: #FFFFFF;
+            border: solid 3px #00E56A;
+            border-radius: 20px;
+            font-size: 36px;
+            transition: all 0.05s ease-in-out;
+        }
+
+        button:active {
+            transform: scale(0.9);
+        }
+    }
+}
+
+//
+
+// class-choose 
 .class-choose-window {
     // position: absolute;
     // right: 200px;
@@ -267,21 +291,15 @@ button {
 
 }
 
-.header-block {
-    text-align: center;
 
-    h1 {
-        color: $TextGreen;
-        font-size: 45px;
-    }
-}
 
 // ЗАДАЧКИ: Текстовый вопрос
-
+// 
 .header__level-balls-line {
     margin-left: 28%;
     display: flex;
     gap: 15px;
+
     .level-ball {
         border-radius: 50%;
         width: 40px;
@@ -289,23 +307,28 @@ button {
         background-color: white;
         border: grey 2px solid;
     }
-    .ball-done{
+
+    .ball-done {
         background-color: #31EA86;
     }
-    .ball-skip{
+
+    .ball-skip {
         background-color: grey;
     }
-    .ball-current{
-        outline:#31EA86 3px solid;
-        border: white ;
+
+    .ball-current {
+        outline: #31EA86 3px solid;
+        border: white;
         outline-offset: 3px;
         background-color: #31EA86;
     }
-    .final-ball{
+
+    .final-ball {
         background-color: gold;
         border: 2px solid orange;
     }
-    img{
+
+    img {
         width: 40px;
     }
 
@@ -359,4 +382,139 @@ button {
 
     }
 
+}
+
+// userprofile
+// 
+.profile-window {
+    margin: 70px 0 50px 0;
+    display: grid;
+    height: 100%;
+    row-gap: 100px;
+    .profile-window__top {
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        p{
+            font-size: 30px;
+            color: $TextGreen;
+            margin-left: 36px;
+        }
+        .profile-window__user-icon {
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            width: 175px;
+            height: 175px;
+            border: green 3px solid;
+            border-radius: 20px;
+            background-image: url(../img/placeholder.jpg);
+
+        }
+        .profile-window__back{
+            background-color: $LiglyRed;
+            border: none;
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+            position: absolute;
+            top: 54px;
+            right: 54px;
+        }
+    }
+    .profile__stats {
+        .tab {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            background-color: white;
+            padding: 20px;
+            outline: #979797 3px solid;
+            border-radius: 20px;
+        }
+
+        .tab>input[type="radio"] {
+            display: none;
+        }
+
+        .tab-content {
+            display: none;
+            width: 100%;
+            margin-top: 60px;
+
+            .tab__stat-block {
+                text-align: center;
+
+                h3 {
+                    font-size: 24px;
+                    margin-bottom: 5px;
+                }
+
+                .stat_block__cirlce {
+                    margin: 0 auto;
+                    border-radius: 50%;
+                    width: 120px;
+                    height: 120px;
+
+                    p {
+                        margin-top: 40%;
+                        font-size: 30px;
+                    }
+                }
+
+            }
+
+            // Меняется в зависимости от оценки в p
+            .stat-good {
+                color: rgb(69, 216, 55);
+
+                .stat_block__cirlce {
+                    border: 5px solid rgb(69, 216, 55);
+                }
+            }
+
+            .stat-mid {
+                color: #F08200;
+
+                .stat_block__cirlce {
+                    border: 5px solid #F08200;
+                }
+            }
+
+            .stat-bad {
+                color: $LiglyRed;
+
+                .stat_block__cirlce {
+                    border: 5px solid $LiglyRed;
+                }
+            }
+        }
+
+        #tab-btn-1:checked~#content-1,
+        #tab-btn-2:checked~#content-2,
+        #tab-btn-3:checked~#content-3 {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        label {
+            display: block;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+            text-decoration: none;
+            color: $TextGreen;
+            border: 0;
+            background: 0 0;
+            height: 30px;
+            font-size: 20px;
+        }
+
+
+        input[type="radio"]:checked+label {
+            cursor: default;
+            outline: 3px solid $TextGreen;
+            border-radius: 5px;
+        }
+    }
 }

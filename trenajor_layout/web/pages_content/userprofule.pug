@@ -1,10 +1,49 @@
 extends ../formsbase.pug
 
+block title 
+    | Профиль
 block content
     .profile-window 
         .profile-window__top
-            .content__icon
+            .profile-window__user-icon
             p Степанов Дмитрий
-        .profile-window__bottom
+            button.profile-window__back 
+                img(src="..//img/back-arrow.png", alt="arrow")
+        .profile-window__botom
             .profile__stats 
                 .tab
+                    input(checked id="tab-btn-1" name="tab-btn" type="radio" value="")
+                    label(for="tab-btn-1") Математика
+                    input(checked id="tab-btn-2" name="tab-btn" type="radio" value="")
+                    label(for="tab-btn-2") Геометрия
+                    input(checked id="tab-btn-3" name="tab-btn" type="radio" value="")
+                    label(for="tab-btn-3") Алгебра
+                    .tab-content#content-1 
+                        .tab__stat-block.stat-good
+                            h3 Выполнено:
+                            .stat_block__cirlce
+                                p 4\10
+                        .tab__stat-block.stat-good
+                            h3 Средний балл:
+                            .stat_block__cirlce
+                                p 2,5
+                    .tab-content#content-2
+                        .tab__stat-block.stat-good
+                            h3 Выполнено:
+                            .stat_block__cirlce
+                                p 3\10
+                        .tab__stat-block.stat-good
+                            h3 Средний балл:
+                            .stat_block__cirlce
+                                p 5,5
+                    .tab-content#content-3
+                        .tab__stat-block.stat-good
+                            h3 Выполнено:
+                            .stat_block__cirlce
+                                p 1\10
+                        .tab__stat-block.stat-good
+                            h3 Средний балл:
+                            .stat_block__cirlce
+                                p 2,3
+
+block scripts 

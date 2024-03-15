@@ -1,9 +1,11 @@
 extends ../formsbase.pug
 
 block content
-    form.content__login
-        input(type="text" placeholder="Придумайте логин")
-        input(type="password" placeholder="Придумайте пароль")
-        input(type="password" placeholder="Повторите пароль")
-
-        button(type="submit") Вход
+    .content__auth-window
+        .auth-window__user-icon
+        form.auth-form
+            input(type="text" placeholder="Придумайте логин")
+            input(type="password" placeholder="Придумайте пароль")
+            input(type="password" placeholder="Повторите пароль")
+            button(type="submit") Вход
+    

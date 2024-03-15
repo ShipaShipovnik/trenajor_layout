@@ -1,8 +1,9 @@
 extends ../formsbase.pug
 
 block content
-    .content__icon
-    form.content__login
-        input(type="text" placeholder="Имя")
-        input(type="password" placeholder="Пароль")
-        button(type="submit") Вход
+    .content__auth-window
+        .auth-window__user-icon
+        form.auth-form
+            input(type="text" placeholder="Имя")
+            input(type="password" placeholder="Пароль")
+            button(type="submit") Вход
