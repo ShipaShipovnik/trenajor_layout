@@ -174,7 +174,7 @@ button {
 
 .content__auth-window {
     width: 625px;
-
+    margin: 30px auto 0 auto;
     .auth-window__user-icon {
         margin: 0 auto;
         background-repeat: no-repeat;
@@ -517,4 +517,93 @@ button {
             border-radius: 5px;
         }
     }
+}
+
+// СТРАНИЦА С ШАРИКАМИ-УРОВНЯМИ
+// 
+
+.main-levels__container{
+    width: 100%;
+    // border: #E45454 1px solid;    
+    position: absolute;
+    display: flex;
+    top: 160px;
+
+    .level-circle{
+        background-color: white;
+        border: 5px solid grey;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        position:absolute;
+        transition: 0.2s;
+        cursor: pointer;
+    }
+    .level-circle:hover{
+        transform: scale(1.1);
+        outline-offset: 10px;
+    }
+
+    #level-1{
+        left: 200px;
+    }
+    #level-2{
+        left: 442px;
+    }
+    #level-3{
+        left: 766px;
+    }
+    #level-4{
+        left: 1074px;
+        top: 40px;
+    }
+    #level-5{
+        left: 825px;
+        top: 220px;
+    }
+    #level-6{
+        left: 480px;
+        top: 400px;
+    }
+    #level-7{
+        left: 200px;
+        top: 600px;
+    }
+    #level-8{
+        left: 480px;
+        top: 670px;
+    }
+    #level-9{
+        left: 770px;
+        top: 680px;
+
+    }
+    #level-10{
+        left: 1180px;
+        top: 670px;
+    }
+
+    // Состояния уровней
+    .level-done{
+        background-color: #31EA86;
+    }
+    .level-skipped{
+        background-color: #B1B1B1;
+    }
+    .level-current{
+        background-color: #B1B1B1;
+        outline: 10px solid #31EA86;
+        outline-offset: 5px;
+        border: none;
+    }
+}
+.main-levels__punktir-bg{
+    width: 1100px;
+    height: 700px;
+    // border: #E45454 1px solid;    
+    margin: 50px auto 0 auto;
+    background-image: url(../img/punktir.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
