@@ -2,7 +2,7 @@
 
 $TextGreen: #378E5F;
 
-$LiglyRed:#E45454;
+$LiglyRed: #E45454;
 
 * {
     font-family: "Balsamiq Sans", sans-serif;
@@ -62,7 +62,8 @@ button {
         display: flex;
         justify-content: center;
         align-items: center;
-        .form-window__wrapper{
+
+        .form-window__wrapper {
             height: 100%;
             width: 1048px;
         }
@@ -175,6 +176,7 @@ button {
 .content__auth-window {
     width: 625px;
     margin: 30px auto 0 auto;
+
     .auth-window__user-icon {
         margin: 0 auto;
         background-repeat: no-repeat;
@@ -334,8 +336,17 @@ button {
 
 }
 
+.puzzle-ask {
+    h1 {
+        font-weight: 900;
+        font-size: 100px;
+        color: #2987DE;
+        margin: 20%;
+    }
+}
+
 .task-window {
-    margin: 150px auto;
+    margin: 100px auto 0 auto;
     padding: 40px 127px;
     background-color: #F0F0F0;
     border: solid 3px green;
@@ -343,10 +354,10 @@ button {
     width: 1300px;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 3fr 1fr;
+    grid-template-rows: auto 1fr;
     gap: 30px 20px;
 
-    .question_block {
+    .question-block {
         width: 100%;
         background-color: rgb(49, 234, 134, 0.5);
         border-radius: 20px;
@@ -382,6 +393,64 @@ button {
 
     }
 
+    // ПАЗЗЛЫ
+    .puzzles-block {
+        display: flex;
+        justify-content: space-around;
+
+        // пазлики статичные
+        .puzzle-static-piece {
+            text-align: center;
+            width: 150px;
+            height: 150px;
+            // border: black 3px solid;
+            border-radius: 10px;
+        }
+
+        #static-piece-1,
+        #static-piece-3 {
+            background-color: rgb(49, 234, 134, 0.5);
+        }
+
+        #static-piece-2,
+        #static-piece-4 {
+            background-color: #e2a5ce;
+        }
+
+        // ячейки
+        .puzzle-cell {
+            text-align: center;
+            border-radius: 10px;
+            width: 150px;
+            height: 150px;
+            border: gold 3px dotted;
+
+            h1 {
+                color: grey;
+
+            }
+        }
+
+    }
+
+    // ответы
+    .puzzles-answer_block {
+        display: flex;
+        justify-content: space-around;
+
+        // пазлики ответов - перемещаемые
+        .puzzle__piece {
+            border-radius: 10px;
+            width: 150px;
+            height: 150px;
+            border: goldenrod 3px solid;
+            background-color: yellow;
+            text-align: center;
+
+        }
+    }
+
+
 }
 
 // userprofile
@@ -391,15 +460,18 @@ button {
     display: grid;
     height: 100%;
     row-gap: 100px;
+
     .profile-window__top {
         justify-content: center;
         display: flex;
         align-items: center;
-        p{
+
+        p {
             font-size: 30px;
             color: $TextGreen;
             margin-left: 36px;
         }
+
         .profile-window__user-icon {
             background-repeat: no-repeat;
             background-position: center;
@@ -411,7 +483,8 @@ button {
             background-image: url(../img/placeholder.jpg);
 
         }
-        .profile-window__back{
+
+        .profile-window__back {
             background-color: $LiglyRed;
             border: none;
             width: 80px;
@@ -422,6 +495,7 @@ button {
             right: 54px;
         }
     }
+
     .profile__stats {
         .tab {
             display: flex;
@@ -522,82 +596,95 @@ button {
 // СТРАНИЦА С ШАРИКАМИ-УРОВНЯМИ
 // 
 
-.main-levels__container{
+.main-levels__container {
     width: 100%;
     // border: #E45454 1px solid;    
     position: absolute;
     display: flex;
     top: 160px;
 
-    .level-circle{
+    .level-circle {
         background-color: white;
         border: 5px solid grey;
         width: 100px;
         height: 100px;
         border-radius: 50%;
-        position:absolute;
+        position: absolute;
         transition: 0.2s;
         cursor: pointer;
     }
-    .level-circle:hover{
+
+    .level-circle:hover {
         transform: scale(1.1);
         outline-offset: 10px;
     }
 
-    #level-1{
+    #level-1 {
         left: 200px;
     }
-    #level-2{
+
+    #level-2 {
         left: 442px;
     }
-    #level-3{
+
+    #level-3 {
         left: 766px;
     }
-    #level-4{
+
+    #level-4 {
         left: 1074px;
         top: 40px;
     }
-    #level-5{
+
+    #level-5 {
         left: 825px;
         top: 220px;
     }
-    #level-6{
+
+    #level-6 {
         left: 480px;
         top: 400px;
     }
-    #level-7{
+
+    #level-7 {
         left: 200px;
         top: 600px;
     }
-    #level-8{
+
+    #level-8 {
         left: 480px;
         top: 670px;
     }
-    #level-9{
+
+    #level-9 {
         left: 770px;
         top: 680px;
 
     }
-    #level-10{
+
+    #level-10 {
         left: 1180px;
         top: 670px;
     }
 
     // Состояния уровней
-    .level-done{
+    .level-done {
         background-color: #31EA86;
     }
-    .level-skipped{
+
+    .level-skipped {
         background-color: #B1B1B1;
     }
-    .level-current{
+
+    .level-current {
         background-color: #B1B1B1;
         outline: 10px solid #31EA86;
         outline-offset: 5px;
         border: none;
     }
 }
-.main-levels__punktir-bg{
+
+.main-levels__punktir-bg {
     width: 1100px;
     height: 700px;
     // border: #E45454 1px solid;    

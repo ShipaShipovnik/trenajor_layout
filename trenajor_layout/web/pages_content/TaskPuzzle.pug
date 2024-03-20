@@ -17,11 +17,29 @@ block header-content
         .level-ball.final-ball
         img(src="..//img/crown.png", alt="crown")
         
-
 block content 
-    .task-window.task-ask
-        .question_block
-            p Выберите правильную цифру, чтобы пример правильно решался.
-        form(action="")
-            input(type="text" name="answer" placeholder="Впиши ответ")
-            input(type="submit" value="Ответить")
+    .task-window.puzzle-ask
+        .puzzles-block
+            .puzzle-static-piece#static-piece-1
+                h1 4
+            .puzzle-static-piece#static-piece-2
+                h1 +
+            .puzzle-cell.js-puzzle-cell
+                h1 ?
+            .puzzle-static-piece#static-piece-3
+                h1 =
+            .puzzle-static-piece#static-piece-4
+                h1 9
+        .question-block.puzzle
+            p Выберите правильную цифру, чтобы пример выше правильно решался.
+        .puzzles-answer_block
+            //- js_ подписи классы для простого взаимодействия в js сделала, можно убрать, как удобно 
+            .puzzle__piece.js-puzzle-piece 
+                h1 1
+            .puzzle__piece.js-puzzle-piece
+                h1 4
+            .puzzle__piece.js-puzzle-piece
+                h1 7
+            .puzzle__piece.js-puzzle-piece
+                h1 5         
+block script 

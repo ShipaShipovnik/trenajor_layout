@@ -268,8 +268,15 @@ button {
   width: 40px;
 }
 
+.puzzle-ask h1 {
+  font-weight: 900;
+  font-size: 100px;
+  color: #2987DE;
+  margin: 20%;
+}
+
 .task-window {
-  margin: 150px auto;
+  margin: 100px auto 0 auto;
   padding: 40px 127px;
   background-color: #F0F0F0;
   border: solid 3px green;
@@ -277,10 +284,10 @@ button {
   width: 1300px;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 3fr 1fr;
+  grid-template-rows: auto 1fr;
   gap: 30px 20px;
 }
-.task-window .question_block {
+.task-window .question-block {
   width: 100%;
   background-color: rgba(49, 234, 134, 0.5);
   border-radius: 20px;
@@ -309,6 +316,46 @@ button {
   border: 3px solid rgb(143, 143, 143);
   border-radius: 10px;
   font-size: 30px;
+  text-align: center;
+}
+.task-window .puzzles-block {
+  display: flex;
+  justify-content: space-around;
+}
+.task-window .puzzles-block .puzzle-static-piece {
+  text-align: center;
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+}
+.task-window .puzzles-block #static-piece-1,
+.task-window .puzzles-block #static-piece-3 {
+  background-color: rgba(49, 234, 134, 0.5);
+}
+.task-window .puzzles-block #static-piece-2,
+.task-window .puzzles-block #static-piece-4 {
+  background-color: #e2a5ce;
+}
+.task-window .puzzles-block .puzzle-cell {
+  text-align: center;
+  border-radius: 10px;
+  width: 150px;
+  height: 150px;
+  border: gold 3px dotted;
+}
+.task-window .puzzles-block .puzzle-cell h1 {
+  color: grey;
+}
+.task-window .puzzles-answer_block {
+  display: flex;
+  justify-content: space-around;
+}
+.task-window .puzzles-answer_block .puzzle__piece {
+  border-radius: 10px;
+  width: 150px;
+  height: 150px;
+  border: goldenrod 3px solid;
+  background-color: yellow;
   text-align: center;
 }
 
