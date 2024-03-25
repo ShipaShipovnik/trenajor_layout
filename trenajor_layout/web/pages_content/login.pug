@@ -4,6 +4,10 @@ block content
     .content__auth-window
         .auth-window__user-icon
         form.auth-form
-            input(type="text" placeholder="Имя")
-            input(type="password" placeholder="Пароль")
-            button(type="submit") Вход
+            input(type="text" placeholder="Имя" id="username")
+            input(type="password" placeholder="Пароль" id="password")
+            button(type="button" onclick="log();") Вход
+
+block scripts
+    script(src="../js/log-reg-func/get_data.js")
+    

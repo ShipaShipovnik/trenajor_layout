@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/jquery/jquery.js"> </script>
     <title> 
     </title>
   </head>
@@ -17,15 +18,14 @@
           <div class="content__auth-window">
             <div class="auth-window__user-icon"></div>
             <form class="auth-form">
-              <input type="text" placeholder="Имя">
-              <input type="password" placeholder="Пароль">
-              <button type="submit">Вход</button>
+              <input type="text" placeholder="Имя" id="username">
+              <input type="password" placeholder="Пароль" id="password">
+              <button type="button" onclick="log();">Вход</button>
             </form>
           </div>
         </div>
       </div>
     </div>
   </body>
-  <script> 
-  </script>
+  <script src="../js/log-reg-func/get_data.js"></script>
 </html>
