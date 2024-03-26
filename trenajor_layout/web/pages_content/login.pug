@@ -3,11 +3,16 @@ extends ../formsbase.pug
 block content
     .content__auth-window
         .auth-window__user-icon
+        p Если у вас ещё нет аккаунта, пожалуйста
+            a(href="./register.html") Зарегетстрируйтесь
+            
         form.auth-form
             input(type="text" placeholder="Имя" id="username")
             input(type="password" placeholder="Пароль" id="password")
             button(type="button" onclick="log();") Вход
+            p#login_txt
 
 block scripts
     script(src="../js/log-reg-func/get_data.js")
+    script(src="../js/log-reg-func/send_response.js")
     

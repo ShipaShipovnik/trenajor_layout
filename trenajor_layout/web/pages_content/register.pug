@@ -3,6 +3,9 @@ extends ../formsbase.pug
 block content
     .content__auth-window
         .auth-window__user-icon
+        p Если у вас уже есть аккаунт, пожалуйста
+            a(href="./login.html") Войдите
+            
         form.auth-form
             input(type="text" placeholder="Придумайте логин")
             input(type="password" placeholder="Придумайте пароль")
