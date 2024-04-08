@@ -34,10 +34,12 @@ def register_user(username, password):
 
         connection.commit()
         connection.close()
+        msg = "SUCCES"
+        return msg
 
     except Exception as Error:
         print(Error)
-        msg = "FAILED"
+        msg = "FAIL"
         return msg
 
 

@@ -7,8 +7,11 @@ block content
             a(href="./login.html") Войдите
             
         form.auth-form
-            input(type="text" placeholder="Придумайте логин")
-            input(type="password" placeholder="Придумайте пароль")
-            input(type="password" placeholder="Повторите пароль")
-            button(type="submit") Вход
+            input(type="text" placeholder="Придумайте логин" id="username" )
+            input(type="password" placeholder="Придумайте пароль" id="pass_1")
+            input(type="password" placeholder="Повторите пароль" id="pass_2")
+            button(type="submit" id="btn_sign_up") Вход
+block scripts
+    script(src="../js/log-reg-func/get_data_from_reg.js")
+    script(src="../js/log-reg-func/send_response.js")
     

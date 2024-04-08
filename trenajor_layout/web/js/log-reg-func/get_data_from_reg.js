@@ -1,11 +1,22 @@
 //get_data_from_reg.js
 
-async function log(){
-    //var username = $('#username').val();
-    eel.log_g(
-        $('#username').val(),
-        $('#password').val()
-    )
+function valid(pas, pass){
+    if (pas==pass){
+        eel.reg_g(
+            $('#username').val(),
+            pas
+        )
+    }
+    else{
+        alert('Пароли не совпадают!')
+    }
+    
 }
 
-function valid(){}
+function main(){
+    valid($('#pass_1').val(), $('#pass_2').val())
+}
+
+$("#btn_sign_up").click(function(){
+    main()
+})
