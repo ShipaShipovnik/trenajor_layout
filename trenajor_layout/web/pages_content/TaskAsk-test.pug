@@ -1,0 +1,30 @@
+extends ../asidebase.pug
+
+block title 
+    | Выбор предмета
+
+block header-content
+    .header__level-balls-line
+        .level-ball.ball-done
+        .level-ball.ball-skip
+        .level-ball.ball-current
+        .level-ball
+        .level-ball
+        .level-ball
+        .level-ball
+        .level-ball
+        .level-ball
+        .level-ball.final-ball
+        img(src="..//img/crown.png", alt="crown")
+        
+
+block content 
+    .task-window.task-ask
+        .question-block
+            p 
+        form(action="")
+            input(type="text" name="answer" placeholder="Впиши ответ")
+            input(type="submit" value="Ответить")
+
+block script
+    script(src="../js/tasks/tasks.js")

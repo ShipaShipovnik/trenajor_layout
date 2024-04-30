@@ -1,7 +1,7 @@
 import sqlite3
 from sqlite3 import Error
 
-url = './db/data.db'
+url = './data.db'
 
 def check_table():
     connection = sqlite3.connect(url)
@@ -71,3 +71,30 @@ def login_user(username, password):
         print(Error)
         msg = "FAILED"
         return msg
+
+
+def take_task(pk):
+    try:
+        connection = sqlite3.connect(url)
+        cursor = connection.cursor()
+        cursor.execute(
+            'SELECT tasktext, option_right, option_wrong, option_wrong_2 FROM task WHERE id == ?',
+            (f'{pk}',)
+        )
+
+        get_data_from_db = cursor.fetchall()
+        get_data = []
+        for el in get_data_from_db:
+            get_data = el
+        print(get_data)
+        if get_data:
+            msg = "SUCCES"
+            connection.close()
+            return get_data
+    except Exception as Error:
+        print(Error)
+        msg = "FAILED"
+        return msg
+    
+if __name__ == "__main__":
+    take_task(1)

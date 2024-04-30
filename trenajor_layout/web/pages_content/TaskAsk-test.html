@@ -30,25 +30,32 @@
       </div>
       <div class="header"> 
         <div class="header-block">
-          <h1>Выберите предмет</h1>
+          <div class="header__level-balls-line">
+            <div class="level-ball ball-done"></div>
+            <div class="level-ball ball-skip"></div>
+            <div class="level-ball ball-current"></div>
+            <div class="level-ball"></div>
+            <div class="level-ball"></div>
+            <div class="level-ball"></div>
+            <div class="level-ball"></div>
+            <div class="level-ball"></div>
+            <div class="level-ball"></div>
+            <div class="level-ball final-ball"></div><img src="..//img/crown.png" alt="crown">
+          </div>
         </div>
       </div>
       <div class="content">
-        <div class="class-choose-window">
-          <div class="class__block" id="class_math"><img src="../img/class_math.png" alt="math">
-            <p>Математика</p>
+        <div class="task-window task-ask">
+          <div class="question-block">
+            <p> </p>
           </div>
-          <div class="class__block" id="class_geometry"><img src="../img/class_geometry.png" alt="geometry">
-            <p>Геометрия</p>
-          </div>
-          <div class="class__block class__block_chosen" id="class_algebra"><img src="../img/class_algebra.png" alt="algebra">
-            <p>Алгебра</p>
-          </div>
-          <div class="class_button">
-            <button type="submit">Выбрать</button>
-          </div>
+          <form action="">
+            <input type="text" name="answer" placeholder="Впиши ответ">
+            <input type="submit" value="Ответить">
+          </form>
         </div>
       </div>
     </div>
   </body>
+  <script src="../js/tasks/tasks.js"></script>
 </html>

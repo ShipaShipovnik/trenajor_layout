@@ -1,6 +1,6 @@
 from __future__ import print_function
 import eel
-from db.models import login_user, register_user
+from db.models import login_user, register_user, take_task
 
 #https://github.com/ShipaShipovnik/trenajor_layout 
 
@@ -16,11 +16,10 @@ def log_g(username, password):
 def reg_g(username, password):
     msg = register_user(username, password)
     eel.login_return(str(msg))
-"""
+
 @eel.expose
-def get_user_online():
-    get_user = login_session()
-    print(get_user)
-    eel.get_user(str(get_user))
-"""
+def take_t(pk):
+    msg = take_task(pk)
+    eel.task_response(str(msg))
+
 eel.start("./pages_content/login.html", size=(640, 480))

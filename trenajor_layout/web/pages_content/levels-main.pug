@@ -7,23 +7,25 @@ block header-content
 block content
     .main-levels__punktir-bg
     .main-levels__container
-        .level-circle.level-done#level-1
+        .level-circle.level-done#level-1(name="1")
             //- h1 1
-        .level-circle.level-skipped#level-2
+        .level-circle.level-skipped#level-2(name="2")
             //- h1 2
-        .level-circle.level-current#level-3
+        .level-circle.level-current#level-3(name="3")
             //- h1 3
-        .level-circle#level-4
+        .level-circle#level-4(name="4")
             //- h1 4
-        .level-circle#level-5 
+        .level-circle#level-5(name="5")
             //- h1 5
-        .level-circle#level-6 
+        .level-circle#level-6(name="6") 
             //- h1 6
-        .level-circle#level-7 
+        .level-circle#level-7(name="7") 
             //- h1 7
-        .level-circle#level-8 
+        .level-circle#level-8(name="8") 
             //- h1 8
-        .level-circle#level-9
+        .level-circle#level-9(name="9")
             //- h1 9
-        .level-circle#level-10
+        .level-circle#level-10(name="10")
             //- h1 10
+block script
+    script(src="../js/tasks/tasks.js")

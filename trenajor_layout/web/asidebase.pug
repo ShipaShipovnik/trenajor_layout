@@ -8,6 +8,7 @@ html(lang="ru")
         link(rel="stylesheet" href="./css/style.css")
         link(rel="stylesheet" href="../css/style.css")
         script(type="text/javascript" src="eel.js")
+        script(src="../js/jquery/jquery.js")
         title 
             block title
     body 
@@ -21,13 +22,14 @@ html(lang="ru")
                         button.aside__back-button Главная
                         button.aside__choise-button Выбор предмета
                     .aside__bottom
-                        button.aside__exit <- Выйти
+                        a(href="./levels-main.html")
+                            button.aside__exit <- Выйти
             .header 
                 .header-block
                     block header-content
             .content
                 block content
-    script 
-        block script
+     
+    block script
     
 
