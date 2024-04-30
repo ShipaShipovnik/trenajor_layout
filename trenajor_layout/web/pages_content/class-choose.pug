@@ -17,4 +17,40 @@ block content
             img(src="../img/class_algebra.png", alt='algebra')
             p Алгебра
         .class_button
-            button(type='submit') Выбрать
+            button(type='submit' id='submit_btn') Выбрать
+    
+    script.
+        document.addEventListener('DOMContentLoaded', function() {
+                var blocks = document.querySelectorAll('.class__block');
+                blocks.forEach(function(block) {
+                    block.addEventListener('click', function() {
+                        blocks.forEach(function(b) {
+                            b.classList.remove('class__block_chosen');
+                        });
+                        this.classList.add('class__block_chosen');
+                    });
+                });
+            });
+
+        let SumbitBtn = document.getElementById('submit_btn')
+        SumbitBtn.addEventListener('click', ()=>{
+            let currentChoose = document.querySelector('.class__block_chosen')
+            let text = currentChoose.querySelector('p').textContent
+            if (text=='Математика'){
+                choose_subj(text)
+            }
+            else if (text=='Геометрия'){
+                choose_subj(text)
+            }
+            else if(text=='Алгебра'){
+                choose_subj(text)
+            }
+        })
+
+        async function choose_subj(subj){
+            eel.choose_subject(subj)
+            location.href = "./levels-main.html"
+        }
+        
+
+

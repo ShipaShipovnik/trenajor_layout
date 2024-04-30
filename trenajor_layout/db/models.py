@@ -1,7 +1,7 @@
 import sqlite3
 from sqlite3 import Error
 
-url = './data.db'
+url = r'..\db'
 
 def check_table():
     connection = sqlite3.connect(url)
@@ -79,20 +79,20 @@ def take_task(pk):
         cursor = connection.cursor()
         cursor.execute(
             'SELECT tasktext, option_right, option_wrong, option_wrong_2 FROM task WHERE id == ?',
-            (f'{pk}',)
+            (pk,)
         )
 
-        get_data_from_db = cursor.fetchall()
-        get_data = []
-        for el in get_data_from_db:
-            get_data = el
-        print(get_data)
-        if get_data:
-            msg = "SUCCES"
+        get_data_from_db = cursor.fetchone()
+        if get_data_from_db:
+            msg = "SUCCESS"
             connection.close()
-            return get_data
-    except Exception as Error:
-        print(Error)
+            return get_data_from_db
+        else:
+            msg = "No task found with that ID"
+            connection.close()
+            return msg
+    except Exception as e:
+        print(e)
         msg = "FAILED"
         return msg
     

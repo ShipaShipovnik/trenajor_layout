@@ -7,7 +7,7 @@ html(lang="ru")
         link(rel="stylesheet" href="../css/reset.css")
         link(rel="stylesheet" href="./css/style.css")
         link(rel="stylesheet" href="../css/style.css")
-        script(type="text/javascript" src="eel.js")
+        script(type="text/javascript" src="../eel.js")
         script(src="../js/jquery/jquery.js")
         title 
             block title
@@ -19,10 +19,10 @@ html(lang="ru")
                         .aside__avatar(style="background-image:url(../img/placeholder.jpg)")
                         p.aside__username Дмитрий Степанов
                     .aside__middle
-                        button.aside__back-button Главная
+                        button.aside__back-button Профиль
                         button.aside__choise-button Выбор предмета
                     .aside__bottom
-                        a(href="./levels-main.html")
+                        a(href="./class-choose.html")
                             button.aside__exit <- Выйти
             .header 
                 .header-block
@@ -31,5 +31,14 @@ html(lang="ru")
                 block content
      
     block script
-    
+        script.
+            let btn_1 = document.querySelector('.aside__back-button')
+            btn_1.addEventListener('click', ()=>{
+                location.href = "./userprofule.html"
+            })
+            let btn_2 = document.querySelector('.aside__choise-button')
+            btn_2.addEventListener('click', ()=>{
+                location.href = "./class-choose.html"
+            })
+            
 

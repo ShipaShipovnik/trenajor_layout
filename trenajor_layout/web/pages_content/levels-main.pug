@@ -3,7 +3,7 @@ extends ../asidebase.pug
 block title 
     | Главная страница
 block header-content
-    h1 Математика 3 класс
+    h1#name_subj .
 block content
     .main-levels__punktir-bg
     .main-levels__container
@@ -27,5 +27,8 @@ block content
             //- h1 9
         .level-circle#level-10(name="10")
             //- h1 10
+    script.
+
 block script
     script(src="../js/tasks/tasks.js")
+    
