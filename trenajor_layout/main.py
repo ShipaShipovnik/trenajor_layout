@@ -7,6 +7,7 @@ from db.models import login_user, register_user, take_task
 #import bottle_websocket as wbs
 
 store = ''
+task = []
 
 eel.init("web")
 
@@ -32,7 +33,14 @@ def response_subject():
 
 @eel.expose
 def take_t(pk):
+    global task
     msg = take_task(pk)
-    eel.task_response(str(msg))
+    task = msg
+    print(msg)
+    print(task)
+
+@eel.expose
+def response_task():
+    return task
 
 eel.start("./pages_content/login.html", size=(1920, 1080))

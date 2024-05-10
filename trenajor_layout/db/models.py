@@ -1,7 +1,7 @@
 import sqlite3
 from sqlite3 import Error
 
-url = r'..\db'
+url = r'Q:\Макар2\trenajor_layout\trenajor_layout\db\data.db'
 
 def check_table():
     connection = sqlite3.connect(url)
@@ -97,4 +97,4 @@ def take_task(pk):
         return msg
     
 if __name__ == "__main__":
-    take_task(1)
+    print(take_task(1))

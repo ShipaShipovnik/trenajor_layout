@@ -41,5 +41,22 @@ block content
             .puzzle__piece.js-puzzle-piece
                 h1 7
             .puzzle__piece.js-puzzle-piece
-                h1 5         
-block script 
+                h1 5
+    #task-response     
+ 
+block script
+    script.
+        alert('xui')
+        async function responseTask() {
+            try {
+                const message = await eel.response_task()();
+                // Обновляем содержимое элемента с id="task-response"
+                document.getElementById('task-response').textContent = message;
+                console.log(message);
+            } catch (error) {
+                location.href = "./levels-main.html";
+                alert('Произошла ошибка');
+                console.error(error);
+            }
+        }
+        responseTask();
