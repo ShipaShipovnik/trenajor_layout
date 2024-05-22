@@ -85,6 +85,17 @@
     </div>
   </body>
   <script>
+    async function userData() {
+        try{
+            const resp = await eel.user_data()();
+        }
+        catch (error){
+            return
+        }
+        
+    }
+    userData();
+    
     let btn_1 = document.querySelector('.aside__back-button')
     btn_1.addEventListener('click', ()=>{
         location.href = "./userprofule.html"

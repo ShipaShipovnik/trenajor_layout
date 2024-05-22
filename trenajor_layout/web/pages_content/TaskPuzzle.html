@@ -67,16 +67,16 @@
             <p>Выберите правильную цифру, чтобы пример выше правильно решался.</p>
           </div>
           <div class="puzzles-answer_block">
-            <div class="puzzle__piece js-puzzle-piece"> 
+            <div class="puzzle__piece js-puzzle-piece" id="static-piece-5">
               <h1>1</h1>
             </div>
-            <div class="puzzle__piece js-puzzle-piece">
+            <div class="puzzle__piece js-puzzle-piece" id="static-piece-6">
               <h1>4</h1>
             </div>
-            <div class="puzzle__piece js-puzzle-piece">
+            <div class="puzzle__piece js-puzzle-piece" id="static-piece-7">
               <h1>7</h1>
             </div>
-            <div class="puzzle__piece js-puzzle-piece">
+            <div class="puzzle__piece js-puzzle-piece" id="static-piece-8">
               <h1>5</h1>
             </div>
           </div>
@@ -86,11 +86,11 @@
     </div>
   </body>
   <script>
-    alert('xui')
     async function responseTask() {
         try {
             const message = await eel.response_task()();
-            // Обновляем содержимое элемента с id="task-response"
+            const fields = message.split(',')
+    
             document.getElementById('task-response').textContent = message;
             console.log(message);
         } catch (error) {

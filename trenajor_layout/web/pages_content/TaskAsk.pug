@@ -21,10 +21,45 @@ block header-content
 block content 
     .task-window.task-ask
         .question-block
-            p Для приготовления обеда повару понадобилось 24 кг картошки, свеклы в 3 раза меньше, а лука в 2 раза меньше чем свеклы. Сколько килограмм лука потратил повар? Впишите правильный ответ.
+            p#question
         form(action="")
-            input(type="text" name="answer" placeholder="Впиши ответ")
-            input(type="submit" value="Ответить")
+            input(type="text" name="answer" placeholder="Впиши ответ" id="answer")
+            input(type="button" value="Ответить" id="get_answer")
+
+block script
+    script.
+        let aswr = '';
+        let aswrId = 0;
+        async function responseTask() {
+            try {
+                const message = await eel.response_task()();
+                document.getElementById('question').textContent = message[0];
+                aswr = message[1];
+                aswrId = message[message.length - 1];
+            } catch (error) {
+                alert('Произошла ошибка');
+                console.error('Error in responseTask:', error);
+            }
+        }
+        responseTask();
+        async function sendTrue(aID){
+            await eel.send_true(aID)();
+            location.href = "./levels-main.html"
+        }
+
+        const IsValid = () => {
+            const answ_2 = document.querySelector('#answer').value;
+            if (answ_2 === aswr) {
+                alert('Верно!');
+                sendTrue(aswrId)
+            } else {
+                alert('Не верно!');
+            }
+        };
+
+        const btn = document.querySelector('#get_answer');
+        btn.addEventListener('click', IsValid);
+
     
 
         

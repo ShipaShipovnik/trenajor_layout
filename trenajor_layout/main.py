@@ -8,6 +8,8 @@ from db.models import login_user, register_user, take_task
 
 store = ''
 task = []
+true_answers = []
+
 
 eel.init("web")
 
@@ -36,11 +38,26 @@ def take_t(pk):
     global task
     msg = take_task(pk)
     task = msg
-    print(msg)
     print(task)
 
 @eel.expose
 def response_task():
     return task
+
+
+@eel.expose
+def send_true(id):
+    global true_answers
+    if id in true_answers:
+        return
+    else:
+        true_answers.append(id)
+    true_answers.sort()
+    print(true_answers)
+    return True
+
+@eel.expose
+def check_true():
+    return true_answers
 
 eel.start("./pages_content/login.html", size=(1920, 1080))

@@ -86,6 +86,8 @@ def take_task(pk):
         if get_data_from_db:
             msg = "SUCCESS"
             connection.close()
+            get_data_from_db = list(get_data_from_db)
+            get_data_from_db.append(pk)
             return get_data_from_db
         else:
             msg = "No task found with that ID"
@@ -95,6 +97,9 @@ def take_task(pk):
         print(e)
         msg = "FAILED"
         return msg
+    
+def get_user_data():
+    pass
     
 if __name__ == "__main__":
     print(take_task(1))

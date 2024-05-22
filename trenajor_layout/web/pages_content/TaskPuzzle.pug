@@ -34,23 +34,23 @@ block content
             p Выберите правильную цифру, чтобы пример выше правильно решался.
         .puzzles-answer_block
             //- js_ подписи классы для простого взаимодействия в js сделала, можно убрать, как удобно 
-            .puzzle__piece.js-puzzle-piece 
+            .puzzle__piece.js-puzzle-piece#static-piece-5
                 h1 1
-            .puzzle__piece.js-puzzle-piece
+            .puzzle__piece.js-puzzle-piece#static-piece-6
                 h1 4
-            .puzzle__piece.js-puzzle-piece
+            .puzzle__piece.js-puzzle-piece#static-piece-7
                 h1 7
-            .puzzle__piece.js-puzzle-piece
+            .puzzle__piece.js-puzzle-piece#static-piece-8
                 h1 5
     #task-response     
  
 block script
     script.
-        alert('xui')
         async function responseTask() {
             try {
                 const message = await eel.response_task()();
-                // Обновляем содержимое элемента с id="task-response"
+                const fields = message.split(',')
+
                 document.getElementById('task-response').textContent = message;
                 console.log(message);
             } catch (error) {
