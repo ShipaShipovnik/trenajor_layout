@@ -1,93 +1,31 @@
-<!DOCTYPE html>
-<html lang="ru">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <script type="text/javascript" src="../eel.js"></script>
-    <script src="../js/jquery/jquery.js"></script>
-    <title> Выбор предмета
-    </title>
-  </head>
-  <body> 
-    <div class="wrapper">
-      <div class="aside">
-        <div class="aside__wrapper">
-          <div class="aside__top">
-            <div class="aside__avatar" style="background-image:url(../img/placeholder.jpg)"></div>
-            <p class="aside__username">Дмитрий Степанов</p>
-          </div>
-          <div class="aside__middle">
-            <button class="aside__back-button">Профиль</button>
-            <button class="aside__choise-button">Выбор предмета</button>
-          </div>
-          <div class="aside__bottom"><a href="./class-choose.html">
-              <button class="aside__exit"><- Выйти</button></a></div>
-        </div>
-      </div>
-      <div class="header"> 
-        <div class="header-block">
-          <div class="header__level-balls-line">
-            <div class="level-ball ball-done"></div>
-            <div class="level-ball ball-skip"></div>
-            <div class="level-ball ball-current"></div>
-            <div class="level-ball"></div>
-            <div class="level-ball"></div>
-            <div class="level-ball"></div>
-            <div class="level-ball"></div>
-            <div class="level-ball"></div>
-            <div class="level-ball"></div>
-            <div class="level-ball final-ball"></div><img src="..//img/crown.png" alt="crown">
-          </div>
-        </div>
-      </div>
-      <div class="content">
-        <div class="task-window task-ask">
-          <div class="question-block">
-            <p id="question"></p>
-          </div>
-          <form action="">
-            <input type="text" name="answer" placeholder="Впиши ответ" id="answer">
-            <input type="button" value="Ответить" id="get_answer">
-          </form>
-        </div>
-      </div>
-    </div>
-  </body>
-  <script>
-    let aswr = '';
-    let aswrId = 0;
-    async function responseTask() {
-        try {
-            const message = await eel.response_task()();
-            document.getElementById('question').textContent = message[0];
-            aswr = message[1];
-            aswrId = message[message.length - 1];
-        } catch (error) {
-            alert('Произошла ошибка');
-            console.error('Error in responseTask:', error);
-        }
+<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="./css/reset.css"><link rel="stylesheet" href="../css/reset.css"><link rel="stylesheet" href="./css/style.css"><link rel="stylesheet" href="../css/style.css"><script type="text/javascript" src="../eel.js"></script><script src="../js/jquery/jquery.js"></script><title> Выбор предмета</title></head><body> <div class="wrapper"><div class="aside"><div class="aside__wrapper"><div class="aside__top"><div class="aside__avatar" style="background-image:url(../img/placeholder.jpg)"></div><p class="aside__username">Вставить имя пользователя</p></div><div class="aside__middle"><button class="aside__back-button">Профиль</button><button class="aside__choise-button">Выбор предмета</button></div><div class="aside__bottom"><a href="./class-choose.html"><button class="aside__exit"><- Выйти</button></a></div></div></div><div class="header"> <div class="header-block"><div class="header__level-balls-line"><div class="level-ball ball-done"></div><div class="level-ball ball-skip"></div><div class="level-ball ball-current"></div><div class="level-ball"></div><div class="level-ball"></div><div class="level-ball"></div><div class="level-ball"></div><div class="level-ball"></div><div class="level-ball"></div><div class="level-ball final-ball"></div><img src="..//img/crown.png" alt="crown"></div></div></div><div class="content"><div class="task-window task-ask"><div class="question-block"><p id="question"></p></div><form action=""><input type="text" name="answer" placeholder="Впиши ответ" id="answer"><input type="button" value="Ответить" id="get_answer"></form></div></div></div></body><script>let aswr = '';
+let aswrId = 0;
+async function responseTask() {
+    try {
+        const message = await eel.response_task()();
+        document.getElementById('question').textContent = message[0];
+        aswr = message[1];
+        aswrId = message[message.length - 1];
+    } catch (error) {
+        alert('Произошла ошибка');
+        console.error('Error in responseTask:', error);
     }
-    responseTask();
-    async function sendTrue(aID){
-        await eel.send_true(aID)();
-        location.href = "./levels-main.html"
+}
+responseTask();
+async function sendTrue(aID){
+    await eel.send_true(aID)();
+    location.href = "./levels-main.html"
+}
+
+const IsValid = () => {
+    const answ_2 = document.querySelector('#answer').value;
+    if (answ_2 === aswr) {
+        alert('Верно!');
+        sendTrue(aswrId)
+    } else {
+        alert('Не верно!');
     }
-    
-    const IsValid = () => {
-        const answ_2 = document.querySelector('#answer').value;
-        if (answ_2 === aswr) {
-            alert('Верно!');
-            sendTrue(aswrId)
-        } else {
-            alert('Не верно!');
-        }
-    };
-    
-    const btn = document.querySelector('#get_answer');
-    btn.addEventListener('click', IsValid);
-  </script>
-</html>
+};
+
+const btn = document.querySelector('#get_answer');
+btn.addEventListener('click', IsValid);</script></html>

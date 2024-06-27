@@ -1,108 +1,49 @@
-<!DOCTYPE html>
-<html lang="ru">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <script type="text/javascript" src="../eel.js"></script>
-    <script src="../js/jquery/jquery.js"></script>
-    <title> Выбор предмета
-    </title>
-  </head>
-  <body> 
-    <div class="wrapper">
-      <div class="aside">
-        <div class="aside__wrapper">
-          <div class="aside__top">
-            <div class="aside__avatar" style="background-image:url(../img/placeholder.jpg)"></div>
-            <p class="aside__username">Дмитрий Степанов</p>
-          </div>
-          <div class="aside__middle">
-            <button class="aside__back-button">Профиль</button>
-            <button class="aside__choise-button">Выбор предмета</button>
-          </div>
-          <div class="aside__bottom"><a href="./class-choose.html">
-              <button class="aside__exit"><- Выйти</button></a></div>
-        </div>
-      </div>
-      <div class="header"> 
-        <div class="header-block">
-          <h1>Выберите предмет</h1>
-        </div>
-      </div>
-      <div class="content">
-        <div class="class-choose-window">
-          <div class="class__block" id="class_math"><img src="../img/class_math.png" alt="math">
-            <p>Математика</p>
-          </div>
-          <div class="class__block" id="class_geometry"><img src="../img/class_geometry.png" alt="geometry">
-            <p>Геометрия</p>
-          </div>
-          <div class="class__block class__block_chosen" id="class_algebra"><img src="../img/class_algebra.png" alt="algebra">
-            <p>Алгебра</p>
-          </div>
-          <div class="class_button">
-            <button type="submit" id="submit_btn">Выбрать</button>
-          </div>
-        </div>
-        <script>
-          document.addEventListener('DOMContentLoaded', function() {
-                  var blocks = document.querySelectorAll('.class__block');
-                  blocks.forEach(function(block) {
-                      block.addEventListener('click', function() {
-                          blocks.forEach(function(b) {
-                              b.classList.remove('class__block_chosen');
-                          });
-                          this.classList.add('class__block_chosen');
-                      });
-                  });
-              });
-          
-          let SumbitBtn = document.getElementById('submit_btn')
-          SumbitBtn.addEventListener('click', ()=>{
-              let currentChoose = document.querySelector('.class__block_chosen')
-              let text = currentChoose.querySelector('p').textContent
-              if (text=='Математика'){
-                  choose_subj(text)
-              }
-              else if (text=='Геометрия'){
-                  choose_subj(text)
-              }
-              else if(text=='Алгебра'){
-                  choose_subj(text)
-              }
-          })
-          
-          async function choose_subj(subj){
-              eel.choose_subject(subj)
-              location.href = "./levels-main.html"
-          }
-        </script>
-      </div>
-    </div>
-  </body>
-  <script>
-    async function userData() {
-        try{
-            const resp = await eel.user_data()();
-        }
-        catch (error){
-            return
-        }
-        
+<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="./css/reset.css"><link rel="stylesheet" href="../css/reset.css"><link rel="stylesheet" href="./css/style.css"><link rel="stylesheet" href="../css/style.css"><script type="text/javascript" src="../eel.js"></script><script src="../js/jquery/jquery.js"></script><title> Выбор предмета</title></head><body> <div class="wrapper"><div class="aside"><div class="aside__wrapper"><div class="aside__top"><div class="aside__avatar" style="background-image:url(../img/placeholder.jpg)"></div><p class="aside__username">Вставить имя пользователя</p></div><div class="aside__middle"><button class="aside__back-button">Профиль</button><button class="aside__choise-button">Выбор предмета</button></div><div class="aside__bottom"><a href="./class-choose.html"><button class="aside__exit"><- Выйти</button></a></div></div></div><div class="header"> <div class="header-block"><h1>Выберите предмет</h1></div></div><div class="content"><div class="class-choose-window"><div class="class__block" id="class_math"><img src="../img/class_math.png" alt="math"><p>Математика</p></div><div class="class__block" id="class_geometry"><img src="../img/class_geometry.png" alt="geometry"><p>Геометрия</p></div><div class="class__block class__block_chosen" id="class_algebra"><img src="../img/class_algebra.png" alt="algebra"><p>Алгебра</p></div><div class="class_button"><button type="submit" id="submit_btn">Выбрать</button></div></div><script>document.addEventListener('DOMContentLoaded', function() {
+        var blocks = document.querySelectorAll('.class__block');
+        blocks.forEach(function(block) {
+            block.addEventListener('click', function() {
+                blocks.forEach(function(b) {
+                    b.classList.remove('class__block_chosen');
+                });
+                this.classList.add('class__block_chosen');
+            });
+        });
+    });
+
+let SumbitBtn = document.getElementById('submit_btn')
+SumbitBtn.addEventListener('click', ()=>{
+    let currentChoose = document.querySelector('.class__block_chosen')
+    let text = currentChoose.querySelector('p').textContent
+    if (text=='Математика'){
+        choose_subj(text)
     }
-    userData();
+    else if (text=='Геометрия'){
+        choose_subj(text)
+    }
+    else if(text=='Алгебра'){
+        choose_subj(text)
+    }
+})
+
+async function choose_subj(subj){
+    eel.choose_subject(subj)
+    location.href = "./levels-main.html"
+}</script></div></div></body><script>async function userData() {
+    try{
+        const resp = await eel.user_data()();
+    }
+    catch (error){
+        return
+    }
     
-    let btn_1 = document.querySelector('.aside__back-button')
-    btn_1.addEventListener('click', ()=>{
-        location.href = "./userprofule.html"
-    })
-    let btn_2 = document.querySelector('.aside__choise-button')
-    btn_2.addEventListener('click', ()=>{
-        location.href = "./class-choose.html"
-    })
-  </script>
-</html>
+}
+userData();
+
+let btn_1 = document.querySelector('.aside__back-button')
+btn_1.addEventListener('click', ()=>{
+    location.href = "./userprofule.html"
+})
+let btn_2 = document.querySelector('.aside__choise-button')
+btn_2.addEventListener('click', ()=>{
+    location.href = "./class-choose.html"
+})</script></html>
